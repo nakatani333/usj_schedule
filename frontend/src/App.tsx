@@ -1,14 +1,13 @@
+// import * as React from 'react'
 import {
-  HashRouter as Router,
-  Switch,
-  Route,
-  Routes,
-  Redirect,
+  BrowserRouter as Router, Route, Routes,
 } from 'react-router-dom'
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import { useState } from 'react'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './App.css'
+import ShowList from './pages/ShowList.tsx'
+// import { edit } from './page/showList.tsx'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -17,9 +16,9 @@ function App() {
     <Router>
       <Routes>
         {/* Todoリストのページ */}
-        <Route path="/" element={<TodoList />} />
+        <Route path="/" element={<ShowList />} />
         {/* Todo編集のページ */}
-        <Route path="/edit/:id" element={<TodoEdit />} />
+        {/* <Route path="/edit/:id" element={<edit />} /> */}
       </Routes>
     </Router>
 
