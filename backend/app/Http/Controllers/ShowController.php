@@ -18,7 +18,7 @@ class ShowController extends Controller
     }
 
     /**
-     * Todo 一覧取得
+     * show 一覧取得
      *
      * @return JsonResponse
      */
@@ -28,6 +28,22 @@ class ShowController extends Controller
 
         return response()->json(
             $Shows,
+            Response::HTTP_OK,
+            [],
+            JSON_UNESCAPED_UNICODE
+        );
+    }
+
+    public function getByIds(Request $request)
+    {
+        $allShows = $this->ShowService->getList();
+        $ids = $request->input('ids', []);
+        // バリデーション
+        $validated = collect($ids)->filter(fn($id) => is_numeric($id))->all();
+        $shows = collect($allShows['data'])->whereIn('id', $validated)->values();
+
+        return response()->json(
+            $shows,
             Response::HTTP_OK,
             [],
             JSON_UNESCAPED_UNICODE

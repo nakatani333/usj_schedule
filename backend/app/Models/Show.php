@@ -11,13 +11,20 @@ class Show extends Model
 
     protected $table = 'shows';
 
-    protected $fillable = [
-        'title',
-        'description',
-        'status',
-    ];
+    // protected $fillable = [
+    //     'title',
+    //     'description',
+    //     'status',
+    // ];
 
     protected $casts = [
         'show_name' => 'string',
+        'area' => 'string',
+        'logo_data' => 'string',
+        'category_id' => 'integer',
+        'is_delete' => 'boolean',
+        'created_at'  => 'datetime',
+        'updated_at'  => 'datetime',
+        'deleted_at'  => 'datetime',
     ];
 }

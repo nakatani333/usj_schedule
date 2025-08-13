@@ -12,6 +12,12 @@
     "moduleResolution": "node",
     "outDir": "./dist/",
     "target": "ES2015",
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
   }
 }

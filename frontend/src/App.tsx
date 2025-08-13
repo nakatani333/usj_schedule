@@ -6,21 +6,35 @@ import {
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
+import { createGlobalStyle } from 'styled-components'
 import ShowList from './pages/ShowList.tsx'
 // import { edit } from './page/showList.tsx'
+import Schedule from './pages/Schedule.tsx'
+
+const GlobalStyle = createGlobalStyle`
+  body * {
+      box-sizing:border-box;
+    }
+  `
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <Router>
-      <Routes>
-        {/* Todoリストのページ */}
-        <Route path="/" element={<ShowList />} />
-        {/* Todo編集のページ */}
-        {/* <Route path="/edit/:id" element={<edit />} /> */}
-      </Routes>
-    </Router>
+    <>
+      <GlobalStyle />
+      <Router>
+        <Routes>
+          {/* showリストのページ */}
+          <Route path="/" element={<ShowList />} />
+          {/* スケジュール表示ページ */}
+          <Route path="/schedule" element={<Schedule />} />
+          {/* Todo編集のページ */}
+          {/* <Route path="/edit/:id" element={<edit />} /> */}
+
+        </Routes>
+      </Router>
+    </>
 
     //     <>
     //       <div>

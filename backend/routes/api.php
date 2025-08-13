@@ -15,4 +15,9 @@ Route::get('/test', function () {
 
 Route::prefix('shows')->group(function () {
   Route::get('/', [ShowController::class, 'index']);
+  Route::post('/schedule', [ShowController::class, 'getByIds']);
 });
+
+// Route::prefix('shows')->group(function () {
+//   Route::post('/by-ids', [ShowController::class, 'getByIds']);
+// });
