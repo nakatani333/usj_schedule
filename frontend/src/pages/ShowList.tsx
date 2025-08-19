@@ -86,7 +86,7 @@ export default function ShowList() {
     <>
       <HeaderArea>
         <Header title="🌏 ショー　一覧">
-          <Link to="/editor">
+          <Link to="/edit">
             編集
           </Link>
         </Header>
@@ -101,7 +101,6 @@ export default function ShowList() {
             {shows.map(show => (
               <label className="show-card">
                 <li className="show-content" key={show.id}>
-
                   <input
                     type="checkbox"
                     value={show.id}

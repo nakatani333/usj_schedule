@@ -2,13 +2,10 @@
 import {
   BrowserRouter as Router, Route, Routes,
 } from 'react-router-dom'
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import './App.css'
 import { createGlobalStyle } from 'styled-components'
 import ShowList from './pages/ShowList.tsx'
-// import { edit } from './page/showList.tsx'
+import Edit from './pages/Edit.tsx'
 import Schedule from './pages/Schedule.tsx'
 
 const GlobalStyle = createGlobalStyle`
@@ -29,8 +26,8 @@ function App() {
           <Route path="/" element={<ShowList />} />
           {/* スケジュール表示ページ */}
           <Route path="/schedule" element={<Schedule />} />
-          {/* Todo編集のページ */}
-          {/* <Route path="/edit/:id" element={<edit />} /> */}
+          {/* show編集のページ */}
+          <Route path="/edit" element={<Edit />} />
 
         </Routes>
       </Router>

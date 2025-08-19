@@ -4,12 +4,15 @@ import styled from 'styled-components'
 const HeaderWrapper = styled.header`
   align-items: center;
   display: flex;
+  position: sticky;
+  z-index:9999;
   height: 5rem;
+  width:100%;
   justify-content: space-between;
   line-height: 2rem;
   padding: 0.5rem 1rem;
   background: #005ac2ff;
-  
+  top:0;
 `
 
 const HeaderTitle = styled.div`

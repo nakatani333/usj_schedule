@@ -27,4 +27,9 @@ class Show extends Model
         'updated_at'  => 'datetime',
         'deleted_at'  => 'datetime',
     ];
+
+    public function times()
+    {
+        return $this->belongsToMany(Time::class, 'show_time');
+    }
 }
